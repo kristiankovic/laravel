@@ -30,6 +30,8 @@ php artisan make:model Post
 
 ------------------------------------------------------------------------------------------------
 
+LOS SEEDERS SOLO SE USAN PARA AGRUPAR CONJUNTO DE OPERACIONES PARA UN MODELO
+
 - Crear datos default para cuando se creen las tablas
 
 configurar el archivo /seeders/DatabaseSeeder.php
