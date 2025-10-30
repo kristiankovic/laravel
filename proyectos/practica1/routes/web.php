@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Models\Post;
+use PHPUnit\Framework\Attributes\PostCondition;
 use Ramsey\Uuid\Type\Time;
 
 Route::get('/', function () {
@@ -77,3 +79,11 @@ Route::get('/prueba', function(){
 
     // dd($post->is_active);
 });
+
+Route::controller(PostController::class)->group(function(){
+
+    Route::get('/posts', 'index')->name('inicio');
+    Route::get('/posts/create', 'create')->name('create');
+});
+
+Route::get('/posts/{id}', [PostController::class, 'show']);

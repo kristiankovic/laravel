@@ -17,9 +17,9 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'category_post' => $this->faker->sentence(),
-            'title_post'    => $this->faker->text(100),
-            'content_post'  => $this->faker->word(),
+            'category_post' => $this->faker->word(),
+            'title_post'    => $this->faker->word(100),
+            'content_post'  => $this->faker->text(150),
             'published_at'  => $this->faker->dateTime()
         ];
     }
