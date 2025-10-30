@@ -1,0 +1,40 @@
+php artisan migrate -> Ejecuta todas las migraciones pendientes. Crea las tablas en la base de datos.
+
+php artisan migrate:rollback -> Elimina las tablas creadas en la última tanda de migraciones ejecutando el método down.
+
+php artisan make:migration create_*_table -> Crea una nueva migración con la estructura de la clase ya hecha.
+
+php artisan migrate:refresh -> Empieza a ejecutar todos los métodos down de todas las migraciones y luego las vuelve a crear
+
+php artisan migrate:fresh -> Elimina todas las tablas que hay en la base y luego las vuelve a crear
+
+usar refresh o fresh cuando todos los datos han sido insertados con
+migraciones
+
+refresh -> solo elimina las tablas creadas con las migraciones y no las
+que se crean de manera manual pero borra los datos de las tablas ingresados manualmente
+
+---------------------------------------------------------------------------------------------------
+
+ALTERAR TABLAS CUANDO YA SE HA CREADO
+
+php artisan make:migration add_id_categorie_to_tblproductos_table
+
+--------------------------------------------------------------------------------------
+
+- Interaccion con bases de datos
+
+ORM -> Object Mapping Relational (Eloquent)
+
+php artisan make:model Post
+
+------------------------------------------------------------------------------------------------
+
+- Crear datos default para cuando se creen las tablas
+
+configurar el archivo /seeders/DatabaseSeeder.php
+
+-Crear un Seeder para cada tipo de dato que se quiere guardar
+
+php artisan make:seeder UserSeeder
+php artisan migrate:fresh --seed

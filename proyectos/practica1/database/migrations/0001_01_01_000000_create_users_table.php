@@ -13,7 +13,8 @@ return new class extends Migration
 
         //Recibe 2 parametros 1 cadena y una funcion
         //'users' -> nombre de la tabla
-        //
+        // callback que crea la tabla y sus campos
+        
         Schema::create('users', function (Blueprint $table) {
             $table->id(); //crea una columna con nombre id, entero muy grande y va tener una llave primaria
             $table->string('name'); //crea un campo de tipo string 

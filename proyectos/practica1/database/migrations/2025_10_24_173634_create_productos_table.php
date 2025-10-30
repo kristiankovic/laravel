@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('tbl_productos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            //campo agreado despues de hacer make migrate para probar el migrate:refresh
+            //$table->integer('id_categorie')->after('id');
+
             $table->string('nombre');
             //nombre, numeros de 2 decimales
             $table->decimal('precio', 5, 2);

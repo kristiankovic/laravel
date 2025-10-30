@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\Post;
+use Ramsey\Uuid\Type\Time;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,4 +25,55 @@ Route::controller(HomeController::class)->group(function(){
     //El name('') es el action que recibe el form
     Route::post('/form-recibir', 'recibirForm')->name('datos');
 
+});
+
+Route::get('/prueba', function(){
+    
+    //Crear post
+    // //instanciar un objeto de la tabla
+    $post = new Post;
+
+    // //asignar los valores con los mismos nombres de las columnas de la tabla
+    // $post->category_post = 'Categoria de prueba 1';
+    // $post->title_post = 'Título de prueba 1';
+    // $post->content_post = 'contenido de prueba 1';
+
+    // //guarda el objeto en la tabla
+    // $post->save();
+
+    // return $post;
+
+    //Buscar post por ID
+    //$post = Post::find(9);
+    
+    //Buscar post por nombre y actualizarlo
+    // $post = Post::where('title_post', 'Título de prueba 1')->first();
+
+    // $post->category_post = 'Desarrollo FrontEnd';
+    // $post->title_post = 'Introducción a Laravel 12.35.11';
+    // $post->save();
+
+    // return ($post) ? $post : 'No se encontro el el registro';
+
+    // $posts = Post::all();
+
+    // return $posts;
+
+    // $postsFiltrados = Post::where('id', '>', '2')->get();
+    // $postGet = Post::get();
+
+    // return [$postsFiltrados, $postGet];
+
+    //ORDENAMIENTO
+    // $posts = Post::orderBy('id', 'asc')->select('id', 'title_post')
+    //                 ->take(2)->get();
+
+    // return $posts;
+
+    // $post = Post::find(1);
+    // $post->is_active = 0;
+
+    // $post->save();
+
+    // dd($post->is_active);
 });
